@@ -50,7 +50,7 @@ public class Main extends Application {
         Thread readerThread = new Thread(new IncomingReader());
         readerThread.start();
     }
-    public void setUpNetworking(String a){
+    public void setUpNetworking(String a, String b, String c){
         try{
             sock = new Socket(a, 5000);
             InputStreamReader streamReader = new InputStreamReader(sock.getInputStream());
@@ -58,6 +58,8 @@ public class Main extends Application {
             reader = new BufferedReader(streamReader);
             writer = new PrintWriter(sock.getOutputStream());
             oos = new ObjectOutputStream(sock.getOutputStream());
+            //Добавить отправку логина и пароля прям из этого метода, из конекта сюда передать инфу
+            oos.writeObject(b+c);
         }
         catch(IOException ex){
             showError(ex);

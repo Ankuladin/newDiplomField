@@ -20,6 +20,7 @@ public class MessageForBossController {
     @FXML
     private void clickSend(ActionEvent event) {
         try {
+            /*
             String datePlace = "";
             currLD = LocalDateTime.now();
             switch (numbField) {
@@ -31,6 +32,8 @@ public class MessageForBossController {
                 break;
             }
             String k = datePlace + " : " + TF1.getText();
+            */
+            String k = TF1.getText();
             mainApp.oos.writeObject(k);
             mainApp.writer.flush();
         } catch (Exception ex) {

@@ -53,7 +53,8 @@ public class ConnectLayoutController {
                     break;
                 }
                 try{
-                    mainApp.setUpNetworking(TF1.getText());
+                    //Добавить передачу даных в нижний метод логина и пароля
+                    mainApp.setUpNetworking(TF1.getText(), TF2.getText(), TF3.getText());
                     mainApp.go();
                 }catch (Exception e){
                     showError(e);
